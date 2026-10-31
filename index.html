@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="실제 장소를 검색하고 출발지와 도착지 사이의 직선거리를 확인하세요.">
+  <title>사이거리 — 두 장소 사이의 거리</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" type="module"></script>
+</head>
+<body>
+  <header><a class="brand" href="/">↗ 사이거리<span>SAI DISTANCE</span></a><span class="badge">OpenStreetMap 기반</span></header>
+  <main>
+    <section class="intro"><p class="eyebrow">EVERY JOURNEY STARTS SOMEWHERE</p><h1>두 장소 사이,<br>얼마나 멀까요<span>?</span></h1><p>가고 싶은 곳을 검색하고, 두 지점 사이의 거리를 확인하세요.</p></section>
+    <section class="card" aria-label="거리 측정">
+      <div class="card-heading"><h2>어디에서 어디까지</h2><span>01 — 02</span></div>
+      <div class="place" id="origin-section"><label for="origin"> <span class="dot"></span>출발지</label><form data-side="origin"><div class="search-row"><input id="origin" name="q" placeholder="예: 서울역" minlength="2" maxlength="120" required autocomplete="off"><button type="submit">검색</button></div></form><p class="selection" id="origin-selection">장소를 검색하고 결과에서 선택해주세요.</p><ul id="origin-results" class="results" aria-label="출발지 검색 결과"></ul></div>
+      <div class="place" id="destination-section"><label for="destination"><span class="dot end"></span>도착지</label><form data-side="destination"><div class="search-row"><input id="destination" name="q" placeholder="예: 남산서울타워" minlength="2" maxlength="120" required autocomplete="off"><button type="submit">검색</button></div></form><p class="selection" id="destination-selection">장소를 검색하고 결과에서 선택해주세요.</p><ul id="destination-results" class="results" aria-label="도착지 검색 결과"></ul></div>
+      <p id="status" role="status" aria-live="polite">검색 결과에서 출발지와 도착지를 선택하면 거리가 표시됩니다.</p>
+      <div class="result" id="result" hidden><p>총거리 <span>직선거리 기준</span></p><div class="distance"><strong id="distance"></strong><span id="unit"></span></div><p id="route-label"></p><a id="map-link" target="_blank" rel="noopener noreferrer">지도에서 보기 <span aria-hidden="true">↗</span></a><small>OpenStreetMap에서 두 지점을 확인합니다.</small></div>
+    </section>
+    <aside><span>ⓘ</span><p>표시되는 거리는 지표면을 따른 두 좌표 사이의 직선거리입니다.<br>자동차·도보 경로의 실제 이동거리와 다를 수 있습니다.</p></aside>
+  </main>
+  <footer><span>조금 더 가까워지는 방법, 사이거리</span><div>장소 데이터 © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a> · <a href="https://operations.osmfoundation.org/policies/nominatim/">검색 이용 정책</a></div></footer>
+</body>
+</html>
